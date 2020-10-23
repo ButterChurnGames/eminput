@@ -1,0 +1,17 @@
+# Cargo output
+/target
+
+# Editor configurations
+.vscode/
+.idea/
+.vs/
+
+# Profiling Data
+*.perf
+*.perf.old
+perf.data
+perf.data.old
+flamegraph.svg
+
+# Logs
+*.log
