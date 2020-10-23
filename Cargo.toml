@@ -1,0 +1,16 @@
+[package]
+name = "einput"
+version = "0.1.0"
+authors = ["Vaelint <freylint@tuta.io>"]
+edition = "2018"
+path = "src/lib.rs"
+
+
+[dependencies]
+bevy = "0.2.1"
+
+[features]
+default = []
+
+No1DInput = []
+No2DInput = []
