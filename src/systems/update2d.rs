@@ -22,17 +22,17 @@ impl InputUpdateSystem2D {
             let mut diry = 0.0;
 
             // Get x direction
-            if input.pressed(bindings.getxpos()) {
+            if input.pressed(bindings.get_x_pos()) {
                 dirx += 1.0;
             }
-            if input.pressed(bindings.getxneg()) {
+            if input.pressed(bindings.get_x_neg()) {
                 dirx -= 1.0;
             }
             // Get y direction
-            if input.pressed(bindings.getypos()) {
+            if input.pressed(bindings.get_y_pos()) {
                 diry += 1.0;
             }
-            if input.pressed(bindings.getyneg()) {
+            if input.pressed(bindings.get_y_neg()) {
                 diry -= 1.0;
             }
 

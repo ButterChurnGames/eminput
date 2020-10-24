@@ -4,7 +4,7 @@ pub mod bindings;
 pub mod state;
 pub mod systems;
 
-use {bevy::prelude::*, self::prelude::*};
+use {self::prelude::*, bevy::prelude::*};
 
 /// Public exports module
 pub mod prelude {
@@ -16,10 +16,13 @@ pub struct InputPlugin;
 
 impl Plugin for InputPlugin {
     fn build(&self, app: &mut AppBuilder) {
-        #[cfg(features = "1DInput")]
-        app.add_system_to_stage(stage::PRE_UPDATE, InputUpdateSystem1D.system());
-        #[cfg(features = "2DInput")]
-        app.add_system_to_stage(
+        #[cfg(feature = "1DInput")]
+            app.add_system_to_stage(
+            stage::PRE_UPDATE,
+            InputUpdateSystem1D::update_input_1d.system(),
+        );
+        #[cfg(feature = "2DInput")]
+            app.add_system_to_stage(
             stage::PRE_UPDATE,
             InputUpdateSystem2D::update_input_2d.system(),
         );

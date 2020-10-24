@@ -9,6 +9,7 @@ pub mod prelude {
 /// State for 2D input
 /// Intended for platformers and similar 2d games
 /// Also works for fps/tps input
+#[derive(Default)]
 pub struct InputAxisState2D {
     /// Direction the player is inputting
     dir: Vec2,
@@ -43,11 +44,5 @@ impl InputAxisState2D {
     /// Returns the vertical component of the input axis
     pub fn y(&self) -> f32 {
         return self.dir.y();
-    }
-}
-
-impl Default for InputAxisState2D {
-    fn default() -> Self {
-        Self::new(Vec2::zero())
     }
 }
