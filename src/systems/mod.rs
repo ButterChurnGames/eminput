@@ -1,13 +1,16 @@
 //! Input systems module
 
-#[cfg(not(features = "No1DInput"))]
+#[cfg(features = "1DInput")]
 pub mod update1d;
-#[cfg(not(features = "No2DInput"))]
+#[cfg(features = "2DInput")]
 pub mod update2d;
 
 use bevy::prelude::*;
 
 pub mod prelude {
-    #[cfg(not(features = "No2DInput"))]
+    #[cfg(features = "1DInput")]
+    pub use super::update1d::prelude::*;
+
+    #[cfg(features = "2DInput")]
     pub use super::update2d::prelude::*;
 }

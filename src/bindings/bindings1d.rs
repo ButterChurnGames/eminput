@@ -2,7 +2,7 @@ use bevy::prelude::*;
 
 /// Public exports module
 pub mod prelude {
-    pub use super::MvBind1D;
+    pub use super::*;
 }
 
 /// Keybindings for 1D input

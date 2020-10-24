@@ -1,10 +1,12 @@
-use crate::systems::prelude::InputUpdateSystem2D;
-use bevy::prelude::*;
+//! Bevy input library
 
 pub mod bindings;
 pub mod state;
 pub mod systems;
 
+use {bevy::prelude::*, self::prelude::*};
+
+/// Public exports module
 pub mod prelude {
     pub use super::{bindings::prelude::*, state::prelude::*, systems::prelude::*};
 }
@@ -14,9 +16,9 @@ pub struct InputPlugin;
 
 impl Plugin for InputPlugin {
     fn build(&self, app: &mut AppBuilder) {
-        #[cfg(not(features = "No2DInput"))]
+        #[cfg(features = "1DInput")]
         app.add_system_to_stage(stage::PRE_UPDATE, InputUpdateSystem1D.system());
-        #[cfg(not(features = "No2DInput"))]
+        #[cfg(features = "2DInput")]
         app.add_system_to_stage(
             stage::PRE_UPDATE,
             InputUpdateSystem2D::update_input_2d.system(),

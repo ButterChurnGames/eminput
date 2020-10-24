@@ -2,8 +2,9 @@ use bevy::prelude::*;
 
 /// Public exports module
 pub mod prelude {
-    pub use super::MvBind2D;
+    pub use super::*;
 }
+
 /// Keybindings for 2D input
 pub struct MvBind2D {
     /// Keycode representing positive on the X axis
@@ -28,19 +29,19 @@ impl MvBind2D {
     }
 
     /// Returns the current Xaxis positive keycode
-    pub fn getxpos(&self) -> KeyCode {
+    pub fn get_x_pos(&self) -> KeyCode {
         self.xpos
     }
     /// Returns the current Xaxis negative keycode
-    pub fn getxneg(&self) -> KeyCode {
+    pub fn get_x_neg(&self) -> KeyCode {
         self.xneg
     }
     /// Returns the current Yaxis positive keycode
-    pub fn getypos(&self) -> KeyCode {
+    pub fn get_y_pos(&self) -> KeyCode {
         self.ypos
     }
     /// Returns the current Yaxis negative keycode
-    pub fn getyneg(&self) -> KeyCode {
+    pub fn get_y_neg(&self) -> KeyCode {
         self.yneg
     }
 }
