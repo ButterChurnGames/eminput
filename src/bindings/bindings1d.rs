@@ -28,6 +28,7 @@ impl MvBind1D {
         self.neg
     }
 }
+
 impl Default for MvBind1D {
     fn default() -> Self {
         Self::new(KeyCode::D, KeyCode::A)
