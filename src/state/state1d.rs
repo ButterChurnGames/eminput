@@ -13,6 +13,7 @@ pub struct InputAxisState1D {
 
 impl InputAxisState1D {
     /// Returns new instance of Self using given float
+    /// * 'n' - Initialization value of n
     pub fn new(n: f32) -> Self {
         Self { n }
     }
@@ -28,6 +29,7 @@ impl InputAxisState1D {
     }
 
     /// Set n to input value
+    /// * 'val' - input value
     pub fn set_n(&mut self, val: f32) {
         self.n = val;
     }
