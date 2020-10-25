@@ -79,46 +79,46 @@ mod tests {
             let dir = Vec2::new(0.0, 0.0);
             assert_eq!(InputAxisState2D::new(dir), InputAxisState2D { dir });
         }
+    }
 
-        /// InputAxis2D::new() benchmarking module
-        mod new_benches {
-            use super::*;
+    /// InputAxis2D::new() benchmarking module
+    mod new_benches {
+        use super::*;
 
-            /// Global iteration count that won't leak
-            fn get_bench_iter_count() -> u32 {
-                10
-            }
+        /// Global iteration count that won't leak
+        fn get_bench_iter_count() -> u32 {
+            10
+        }
 
-            #[bench]
-            /// Benchmark construction using existing Vec2
-            fn new_vec2_cached(b: &mut Bencher) {
-                let dir: Vec2 = (0.0, 0.0).into();
-                b.iter(|| {
-                    for _i in 1..get_bench_iter_count() {
-                        black_box(InputAxisState2D::new(dir));
-                    }
-                });
-            }
+        #[bench]
+        /// Benchmark construction using existing Vec2
+        fn new_vec2_cached(b: &mut Bencher) {
+            let dir: Vec2 = (0.0, 0.0).into();
+            b.iter(|| {
+                for _i in 1..get_bench_iter_count() {
+                    black_box(InputAxisState2D::new(dir));
+                }
+            });
+        }
 
-            #[bench]
-            /// Benchmark construction by calling Vec2's new function
-            fn new_vec2new(b: &mut Bencher) {
-                b.iter(|| {
-                    for _i in 1..get_bench_iter_count() {
-                        black_box(InputAxisState2D::new(Vec2::new(0.0, 0.0)));
-                    }
-                });
-            }
+        #[bench]
+        /// Benchmark construction by calling Vec2's new function
+        fn new_vec2new(b: &mut Bencher) {
+            b.iter(|| {
+                for _i in 1..get_bench_iter_count() {
+                    black_box(InputAxisState2D::new(Vec2::new(0.0, 0.0)));
+                }
+            });
+        }
 
-            #[bench]
-            /// Benchmark construction by calling .into on a tuple
-            fn new_into(b: &mut Bencher) {
-                b.iter(|| {
-                    for _i in 1..get_bench_iter_count() {
-                        black_box(InputAxisState2D::new((0.0, 0.0).into()));
-                    }
-                });
-            }
+        #[bench]
+        /// Benchmark construction by calling .into on a tuple
+        fn new_into(b: &mut Bencher) {
+            b.iter(|| {
+                for _i in 1..get_bench_iter_count() {
+                    black_box(InputAxisState2D::new((0.0, 0.0).into()));
+                }
+            });
         }
     }
 }
