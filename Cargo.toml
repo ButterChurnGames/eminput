@@ -3,7 +3,6 @@ name = "eminput"
 version = "0.1.0"
 authors = ["Vaelint <freylint@tuta.io>"]
 edition = "2018"
-path = "src/lib.rs"
 
 
 [dependencies]
