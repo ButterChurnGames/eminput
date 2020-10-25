@@ -27,7 +27,6 @@ impl InputUpdateSystem1D {
             if input.pressed(bindings.get_neg()) {
                 dir -= 1.0;
             }
-            // TODO look into faster implementation than into
             state.set_n(dir);
         }
     }
