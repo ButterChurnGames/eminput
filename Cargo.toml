@@ -8,9 +8,14 @@ path = "src/lib.rs"
 
 [dependencies]
 bevy = "0.2.1"
+serde = { version = "1.0.117", optional = true }
 
 [features]
 default = ["1DInput", "2DInput"]
 
+# Input Axis
 1DInput = []
 2DInput = []
+
+Multiplayer = ["InputSerialization"]
+InputSerialization = ["serde"]

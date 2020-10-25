@@ -1,5 +1,8 @@
 //! Bevy input library
 
+#![feature(test)]
+extern crate test;
+
 pub mod bindings;
 pub mod state;
 pub mod systems;
@@ -11,7 +14,7 @@ pub mod prelude {
     pub use super::{bindings::prelude::*, state::prelude::*, systems::prelude::*};
 }
 
-/// Bevy plugin for easily adding eminput-bevy to a bevy app
+/// Bevy plugin for easily adding eminput to a bevy app
 pub struct InputPlugin;
 
 impl Plugin for InputPlugin {
