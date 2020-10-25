@@ -66,15 +66,18 @@ mod tests {
     use super::*;
     use test::{black_box, Bencher};
 
+    /// InputAxis2D::new() testing module
     mod new_tests {
         use super::*;
 
         #[test]
+        /// Test if calling new works at runtime
         fn new_passes() {
             let _axis = InputAxisState2D::new((0.0, 0.0).into());
         }
 
         #[test]
+        /// Test if calling new produces same output as manually constructing
         fn new_return_eqto_manual_construction() {
             let dir = Vec2::new(0.0, 0.0);
             assert_eq!(InputAxisState2D::new(dir), InputAxisState2D { dir });
