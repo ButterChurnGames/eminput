@@ -14,8 +14,8 @@ impl InputUpdateSystem2D {
         mut query: Query<(&MvBind2D, &mut InputAxisState2D)>,
     ) {
         // Iterate through entities with:
-        //  - Movement binding 2d component
-        //  - Movement state 2d component
+        //  * 'bindings' - Movement binding 2d component
+        //  * 'state' - Movement state 2d component
         // TODO consider implementing different SOCD strategies
         for (bindings, mut state) in &mut query.iter() {
             let mut dirx = 0.0;
