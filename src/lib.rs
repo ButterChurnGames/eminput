@@ -51,11 +51,13 @@ mod tests {
     /// This requirement is why it is ignored by default
     // TODO Setup integration tests to run this as a seperate
     // invocation of cargo test
-    fn test_bevy_2dinput() {
+    fn test_bevy_eminput_plugin() {
         App::build()
         .add_plugin(bevy::input::InputPlugin)
         .add_plugin(bevy::app::ScheduleRunnerPlugin::run_once())
         .add_plugin(EMInputPlugin)
         .run();
     }
+
+    // TODO add integration tests for input bindings etc
 }
