@@ -32,8 +32,6 @@ impl Plugin for EMInputPlugin {
     }
 }
 
-// TODO Unit tests
-// TODO benches
 #[cfg(test)]
 mod tests {
     use super::*;
