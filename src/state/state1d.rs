@@ -1,5 +1,3 @@
-
-
 /// Common imports module
 pub mod prelude {
     pub use super::InputAxisState1D;
